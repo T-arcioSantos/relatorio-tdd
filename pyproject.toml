@@ -1,0 +1,5 @@
+[project]
+name = "cadastro-clientes-tdd"
+version = "0.1.0"
+description = "Pequeno CRUD de clientes desenvolvido com TDD."
+requires-python = ">=3.10"
