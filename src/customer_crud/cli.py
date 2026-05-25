@@ -1,3 +1,5 @@
+"""Interface de linha de comando do cadastro de clientes."""
+
 from argparse import ArgumentParser, Namespace
 from pathlib import Path
 
@@ -7,6 +9,7 @@ DEFAULT_STORAGE_PATH = Path("data/customers.json")
 
 
 def build_parser() -> ArgumentParser:
+    """Cria o parser com todos os comandos aceitos pela CLI."""
     parser = ArgumentParser(
         prog="customer-crud",
         description="CRUD de clientes com persistencia em JSON.",
@@ -42,6 +45,16 @@ def build_parser() -> ArgumentParser:
 
 
 def main(argv: list[str] | None = None) -> int:
+    """Executa a CLI.
+
+    Args:
+        argv: Lista opcional de argumentos. Quando ``None``, usa os argumentos
+            recebidos pelo processo.
+
+    Returns:
+        Codigo de saida. Retorna ``0`` em sucesso e ``1`` em erro de validacao
+        ou cliente nao encontrado.
+    """
     args = build_parser().parse_args(argv)
     repo = CustomerRepository(storage_path=args.db)
 
@@ -53,6 +66,7 @@ def main(argv: list[str] | None = None) -> int:
 
 
 def _dispatch(args: Namespace, repo: CustomerRepository) -> int:
+    """Executa o comando selecionado no parser."""
     if args.command == "add":
         customer = repo.create(args.name, args.email, args.phone)
         print(f"Cliente {customer.id} cadastrado: {customer.name}")
@@ -100,6 +114,7 @@ def _dispatch(args: Namespace, repo: CustomerRepository) -> int:
 
 
 def _format_customer(customer_id: int, name: str, email: str, phone: str) -> str:
+    """Formata um cliente para exibicao no terminal."""
     phone_text = phone if phone else "sem telefone"
     return f"{customer_id} | {name} | {email} | {phone_text}"
 

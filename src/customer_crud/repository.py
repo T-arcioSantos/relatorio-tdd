@@ -1,3 +1,5 @@
+"""Repositorio responsavel pelas regras de CRUD de clientes."""
+
 from dataclasses import asdict
 import json
 from pathlib import Path
@@ -6,13 +8,35 @@ from .models import Customer
 
 
 class CustomerRepository:
+    """Gerencia clientes em memoria e, opcionalmente, em arquivo JSON."""
+
     def __init__(self, storage_path: str | Path | None = None) -> None:
+        """Inicializa o repositorio.
+
+        Args:
+            storage_path: Caminho opcional do arquivo JSON usado para carregar e
+                salvar clientes.
+        """
         self._storage_path = Path(storage_path) if storage_path else None
         self._customers: dict[int, Customer] = {}
         self._next_id = 1
         self._load()
 
     def create(self, name: str, email: str, phone: str = "") -> Customer:
+        """Cria um cliente.
+
+        Args:
+            name: Nome do cliente.
+            email: E-mail do cliente. Deve conter ``@`` e ser unico.
+            phone: Telefone opcional.
+
+        Returns:
+            Cliente criado com identificador gerado pelo repositorio.
+
+        Raises:
+            ValueError: Se o nome estiver vazio, o e-mail for invalido ou o
+                e-mail ja estiver cadastrado.
+        """
         name, email, phone = self._validated_fields(name, email, phone)
         self._ensure_email_is_unique(email)
         customer = Customer(
@@ -27,9 +51,22 @@ class CustomerRepository:
         return customer
 
     def get(self, customer_id: int) -> Customer | None:
+        """Busca um cliente pelo identificador.
+
+        Args:
+            customer_id: Identificador do cliente.
+
+        Returns:
+            Cliente encontrado ou ``None`` quando o identificador nao existe.
+        """
         return self._customers.get(customer_id)
 
     def list(self) -> list[Customer]:
+        """Lista os clientes na ordem dos identificadores.
+
+        Returns:
+            Lista de clientes cadastrados.
+        """
         return [self._customers[key] for key in sorted(self._customers)]
 
     def update(
@@ -40,6 +77,20 @@ class CustomerRepository:
         email: str | None = None,
         phone: str | None = None,
     ) -> Customer | None:
+        """Atualiza dados de um cliente.
+
+        Args:
+            customer_id: Identificador do cliente.
+            name: Novo nome, quando informado.
+            email: Novo e-mail, quando informado.
+            phone: Novo telefone, quando informado.
+
+        Returns:
+            Cliente atualizado ou ``None`` quando o identificador nao existe.
+
+        Raises:
+            ValueError: Se os novos dados violarem as regras de validacao.
+        """
         current = self.get(customer_id)
         if current is None:
             return None
@@ -65,6 +116,14 @@ class CustomerRepository:
         return updated
 
     def delete(self, customer_id: int) -> bool:
+        """Remove um cliente.
+
+        Args:
+            customer_id: Identificador do cliente.
+
+        Returns:
+            ``True`` se o cliente foi removido, ou ``False`` se nao existia.
+        """
         if customer_id not in self._customers:
             return False
         del self._customers[customer_id]
@@ -105,6 +164,7 @@ class CustomerRepository:
         email: str,
         phone: str,
     ) -> tuple[str, str, str]:
+        """Normaliza e valida os campos basicos de cliente."""
         name = name.strip()
         email = email.strip().lower()
         phone = phone.strip()
@@ -120,6 +180,7 @@ class CustomerRepository:
         email: str,
         ignored_customer_id: int | None = None,
     ) -> None:
+        """Garante que o e-mail nao pertence a outro cliente."""
         for customer in self._customers.values():
             if customer.id == ignored_customer_id:
                 continue

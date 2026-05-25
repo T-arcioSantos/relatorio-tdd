@@ -1,0 +1,560 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Cadastro de Clientes com TDD: Referência da Classe customer_crud.repository.CustomerRepository</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Cadastro de Clientes com TDD
+   </div>
+   <div id="projectbrief">CRUD de clientes em Python desenvolvido com TDD</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Busca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('classcustomer__crud_1_1repository_1_1_customer_repository.html','','classcustomer__crud_1_1repository_1_1_customer_repository-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referência da Classe customer_crud.repository.CustomerRepository</div></div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Métodos Públicos</h2></td></tr>
+<tr class="memitem:a9bda3c47045c3f9ee627639012ec3d30" id="r_a9bda3c47045c3f9ee627639012ec3d30"><td class="memItemLeft">None&#160;</td><td class="memItemRight"><a class="el" href="#a9bda3c47045c3f9ee627639012ec3d30">__init__</a> (self, str|Path|None storage_path=None)</td></tr>
+<tr class="memitem:a7a124b2c9251c0f9fbce494fee4aa68f" id="r_a7a124b2c9251c0f9fbce494fee4aa68f"><td class="memItemLeft"><a class="el" href="classcustomer__crud_1_1models_1_1_customer.html">Customer</a>&#160;</td><td class="memItemRight"><a class="el" href="#a7a124b2c9251c0f9fbce494fee4aa68f">create</a> (self, str name, str email, str phone=&quot;&quot;)</td></tr>
+<tr class="memitem:a052c9bc821b463fd8fccad34748028ab" id="r_a052c9bc821b463fd8fccad34748028ab"><td class="memItemLeft"><a class="el" href="classcustomer__crud_1_1models_1_1_customer.html">Customer</a>|None&#160;</td><td class="memItemRight"><a class="el" href="#a052c9bc821b463fd8fccad34748028ab">get</a> (self, int customer_id)</td></tr>
+<tr class="memitem:ab0ed383bea107b6d900a601ae9d3ca0c" id="r_ab0ed383bea107b6d900a601ae9d3ca0c"><td class="memItemLeft">list[<a class="el" href="classcustomer__crud_1_1models_1_1_customer.html">Customer</a>]&#160;</td><td class="memItemRight"><a class="el" href="#ab0ed383bea107b6d900a601ae9d3ca0c">list</a> (self)</td></tr>
+<tr class="memitem:ac0e5877982f189dcf584e61c9c9a56c5" id="r_ac0e5877982f189dcf584e61c9c9a56c5"><td class="memItemLeft"><a class="el" href="classcustomer__crud_1_1models_1_1_customer.html">Customer</a>|None&#160;</td><td class="memItemRight"><a class="el" href="#ac0e5877982f189dcf584e61c9c9a56c5">update</a> (self, int customer_id, *, str|None name=None, str|None email=None, str|None phone=None)</td></tr>
+<tr class="memitem:aa151c07c82855087499615b5647393f3" id="r_aa151c07c82855087499615b5647393f3"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#aa151c07c82855087499615b5647393f3">delete</a> (self, int customer_id)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Membros protegidos</h2></td></tr>
+<tr class="memitem:a58dbc9a726d7dfa307a689b5c45a257c" id="r_a58dbc9a726d7dfa307a689b5c45a257c"><td class="memItemLeft">None&#160;</td><td class="memItemRight"><a class="el" href="#a58dbc9a726d7dfa307a689b5c45a257c">_load</a> (self)</td></tr>
+<tr class="memitem:a06e594186694b68f74c67c635f0aefe3" id="r_a06e594186694b68f74c67c635f0aefe3"><td class="memItemLeft">None&#160;</td><td class="memItemRight"><a class="el" href="#a06e594186694b68f74c67c635f0aefe3">_save</a> (self)</td></tr>
+<tr class="memitem:aad1cea7eaf43ed3233e18c54c0c52278" id="r_aad1cea7eaf43ed3233e18c54c0c52278"><td class="memItemLeft">tuple[str, str, str]&#160;</td><td class="memItemRight"><a class="el" href="#aad1cea7eaf43ed3233e18c54c0c52278">_validated_fields</a> (self, str name, str email, str phone)</td></tr>
+<tr class="memitem:a17d97af6885a8c3e182cda86a0374508" id="r_a17d97af6885a8c3e182cda86a0374508"><td class="memItemLeft">None&#160;</td><td class="memItemRight"><a class="el" href="#a17d97af6885a8c3e182cda86a0374508">_ensure_email_is_unique</a> (self, str email, int|None ignored_customer_id=None)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Atributos Protegidos</h2></td></tr>
+<tr class="memitem:ae94fa865d48b96ea73ba2554ff556b33" id="r_ae94fa865d48b96ea73ba2554ff556b33"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ae94fa865d48b96ea73ba2554ff556b33">_storage_path</a> = Path(storage_path) if storage_path else None</td></tr>
+<tr class="memitem:a3930a65d3869bf987f10460ec1444838" id="r_a3930a65d3869bf987f10460ec1444838"><td class="memItemLeft">dict&#160;</td><td class="memItemRight"><a class="el" href="#a3930a65d3869bf987f10460ec1444838">_customers</a> = {}</td></tr>
+<tr class="memitem:ab6ecb9aa8300bcb560ca30ed3a2953b2" id="r_ab6ecb9aa8300bcb560ca30ed3a2953b2"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ab6ecb9aa8300bcb560ca30ed3a2953b2">_next_id</a> = 1</td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrição detalhada</h2>
+<div class="textblock"><pre class="fragment">Gerencia clientes em memoria e, opcionalmente, em arquivo JSON.</pre> </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Construtores e Destrutores</h2>
+<a id="a9bda3c47045c3f9ee627639012ec3d30" name="a9bda3c47045c3f9ee627639012ec3d30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9bda3c47045c3f9ee627639012ec3d30">&#9670;&#160;</a></span>__init__()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> None customer_crud.repository.CustomerRepository.__init__ </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">str | Path | None </td>          <td class="paramname"><span class="paramname"><em>storage_path</em></span><span class="paramdefsep"> = </span><span class="paramdefval">None</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Inicializa o repositorio.
+
+Args:
+    storage_path: Caminho opcional do arquivo JSON usado para carregar e
+        salvar clientes.
+</pre> 
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentação das funções</h2>
+<a id="a17d97af6885a8c3e182cda86a0374508" name="a17d97af6885a8c3e182cda86a0374508"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17d97af6885a8c3e182cda86a0374508">&#9670;&#160;</a></span>_ensure_email_is_unique()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"> None customer_crud.repository.CustomerRepository._ensure_email_is_unique </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">str</td>          <td class="paramname"><span class="paramname"><em>email</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int | None </td>          <td class="paramname"><span class="paramname"><em>ignored_customer_id</em></span><span class="paramdefsep"> = </span><span class="paramdefval">None</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Garante que o e-mail nao pertence a outro cliente.</pre> 
+</div>
+</div>
+<a id="a58dbc9a726d7dfa307a689b5c45a257c" name="a58dbc9a726d7dfa307a689b5c45a257c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58dbc9a726d7dfa307a689b5c45a257c">&#9670;&#160;</a></span>_load()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"> None customer_crud.repository.CustomerRepository._load </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a06e594186694b68f74c67c635f0aefe3" name="a06e594186694b68f74c67c635f0aefe3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06e594186694b68f74c67c635f0aefe3">&#9670;&#160;</a></span>_save()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"> None customer_crud.repository.CustomerRepository._save </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aad1cea7eaf43ed3233e18c54c0c52278" name="aad1cea7eaf43ed3233e18c54c0c52278"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad1cea7eaf43ed3233e18c54c0c52278">&#9670;&#160;</a></span>_validated_fields()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"> tuple[str, str, str] customer_crud.repository.CustomerRepository._validated_fields </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">str</td>          <td class="paramname"><span class="paramname"><em>name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">str</td>          <td class="paramname"><span class="paramname"><em>email</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">str</td>          <td class="paramname"><span class="paramname"><em>phone</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Normaliza e valida os campos basicos de cliente.</pre> 
+</div>
+</div>
+<a id="a7a124b2c9251c0f9fbce494fee4aa68f" name="a7a124b2c9251c0f9fbce494fee4aa68f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a124b2c9251c0f9fbce494fee4aa68f">&#9670;&#160;</a></span>create()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> <a class="el" href="classcustomer__crud_1_1models_1_1_customer.html">Customer</a> customer_crud.repository.CustomerRepository.create </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">str</td>          <td class="paramname"><span class="paramname"><em>name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">str</td>          <td class="paramname"><span class="paramname"><em>email</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">str </td>          <td class="paramname"><span class="paramname"><em>phone</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;&quot;</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Cria um cliente.
+
+Args:
+    name: Nome do cliente.
+    email: E-mail do cliente. Deve conter ``@`` e ser unico.
+    phone: Telefone opcional.
+
+Returns:
+    Cliente criado com identificador gerado pelo repositorio.
+
+Raises:
+    ValueError: Se o nome estiver vazio, o e-mail for invalido ou o
+        e-mail ja estiver cadastrado.
+</pre> 
+</div>
+</div>
+<a id="aa151c07c82855087499615b5647393f3" name="aa151c07c82855087499615b5647393f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa151c07c82855087499615b5647393f3">&#9670;&#160;</a></span>delete()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> bool customer_crud.repository.CustomerRepository.delete </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>customer_id</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Remove um cliente.
+
+Args:
+    customer_id: Identificador do cliente.
+
+Returns:
+    ``True`` se o cliente foi removido, ou ``False`` se nao existia.
+</pre> 
+</div>
+</div>
+<a id="a052c9bc821b463fd8fccad34748028ab" name="a052c9bc821b463fd8fccad34748028ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a052c9bc821b463fd8fccad34748028ab">&#9670;&#160;</a></span>get()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> <a class="el" href="classcustomer__crud_1_1models_1_1_customer.html">Customer</a> | None customer_crud.repository.CustomerRepository.get </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>customer_id</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Busca um cliente pelo identificador.
+
+Args:
+    customer_id: Identificador do cliente.
+
+Returns:
+    Cliente encontrado ou ``None`` quando o identificador nao existe.
+</pre> 
+</div>
+</div>
+<a id="ab0ed383bea107b6d900a601ae9d3ca0c" name="ab0ed383bea107b6d900a601ae9d3ca0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0ed383bea107b6d900a601ae9d3ca0c">&#9670;&#160;</a></span>list()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> list[<a class="el" href="classcustomer__crud_1_1models_1_1_customer.html">Customer</a>] customer_crud.repository.CustomerRepository.list </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Lista os clientes na ordem dos identificadores.
+
+Returns:
+    Lista de clientes cadastrados.
+</pre> 
+</div>
+</div>
+<a id="ac0e5877982f189dcf584e61c9c9a56c5" name="ac0e5877982f189dcf584e61c9c9a56c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0e5877982f189dcf584e61c9c9a56c5">&#9670;&#160;</a></span>update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> <a class="el" href="classcustomer__crud_1_1models_1_1_customer.html">Customer</a> | None customer_crud.repository.CustomerRepository.update </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>customer_id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">*</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">str | None </td>          <td class="paramname"><span class="paramname"><em>name</em></span><span class="paramdefsep"> = </span><span class="paramdefval">None</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">str | None </td>          <td class="paramname"><span class="paramname"><em>email</em></span><span class="paramdefsep"> = </span><span class="paramdefval">None</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">str | None </td>          <td class="paramname"><span class="paramname"><em>phone</em></span><span class="paramdefsep"> = </span><span class="paramdefval">None</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Atualiza dados de um cliente.
+
+Args:
+    customer_id: Identificador do cliente.
+    name: Novo nome, quando informado.
+    email: Novo e-mail, quando informado.
+    phone: Novo telefone, quando informado.
+
+Returns:
+    Cliente atualizado ou ``None`` quando o identificador nao existe.
+
+Raises:
+    ValueError: Se os novos dados violarem as regras de validacao.
+</pre> 
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Atributos</h2>
+<a id="a3930a65d3869bf987f10460ec1444838" name="a3930a65d3869bf987f10460ec1444838"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3930a65d3869bf987f10460ec1444838">&#9670;&#160;</a></span>_customers</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">customer_crud.repository.CustomerRepository._customers = {}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab6ecb9aa8300bcb560ca30ed3a2953b2" name="ab6ecb9aa8300bcb560ca30ed3a2953b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6ecb9aa8300bcb560ca30ed3a2953b2">&#9670;&#160;</a></span>_next_id</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int customer_crud.repository.CustomerRepository._next_id = 1</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae94fa865d48b96ea73ba2554ff556b33" name="ae94fa865d48b96ea73ba2554ff556b33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae94fa865d48b96ea73ba2554ff556b33">&#9670;&#160;</a></span>_storage_path</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">customer_crud.repository.CustomerRepository._storage_path = Path(storage_path) if storage_path else None</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>A documentação para essa classe foi gerada a partir do seguinte arquivo:<ul>
+<li><a class="el" href="repository_8py.html">repository.py</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="namespacecustomer__crud.html">customer_crud</a></li><li class="navelem"><a href="namespacecustomer__crud_1_1repository.html">repository</a></li><li class="navelem"><a href="classcustomer__crud_1_1repository_1_1_customer_repository.html">CustomerRepository</a></li>
+    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

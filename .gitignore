@@ -1,10 +1,39 @@
+# Python cache
 __pycache__/
+**/__pycache__/
 *.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Test and coverage output
 .pytest_cache/
 .coverage
+.coverage.*
 htmlcov/
-data/
-docs/*.html
 tests/customers_*_test.json
 tests/tmp*/
+
+# Build and packaging output
+build/
+dist/
+*.egg-info/
+
+# Runtime data created by the CLI
+data/
+
+# Doxygen HTML documentation is kept for the project submission.
+docs/doxygen/latex/
+
+# Editor and operating system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Local sandbox checks
 sandbox_write_check.txt

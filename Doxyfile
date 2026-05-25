@@ -1,0 +1,31 @@
+PROJECT_NAME           = "Cadastro de Clientes com TDD"
+PROJECT_BRIEF          = "CRUD de clientes em Python desenvolvido com TDD"
+OUTPUT_DIRECTORY       = docs/doxygen
+OUTPUT_LANGUAGE        = Brazilian
+INPUT                  = src
+RECURSIVE              = YES
+FILE_PATTERNS          = *.py
+EXTENSION_MAPPING      = py=Python
+
+GENERATE_HTML          = YES
+GENERATE_LATEX         = NO
+HTML_OUTPUT            = html
+
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = NO
+EXTRACT_STATIC         = YES
+HIDE_UNDOC_MEMBERS     = NO
+HIDE_UNDOC_CLASSES     = NO
+
+FULL_PATH_NAMES        = NO
+STRIP_FROM_PATH        = src
+OPTIMIZE_OUTPUT_JAVA   = YES
+
+QUIET                  = NO
+WARNINGS               = YES
+WARN_IF_UNDOCUMENTED   = NO
+WARN_IF_DOC_ERROR      = YES
+
+EXCLUDE_PATTERNS       = */__pycache__/* */tmp* *.pyc
+GENERATE_TREEVIEW      = YES
+SEARCHENGINE           = YES
