@@ -243,10 +243,11 @@ Entrada documentada:
 src/
 ```
 
-Saída gerada:
+Saídas geradas:
 
 ```text
 docs/doxygen/html/index.html
+docs/doxygen/cadastro-clientes-doxygen.pdf
 ```
 
 ### Por que Doxygen?
@@ -268,6 +269,31 @@ Depois da geração, abra:
 
 ```text
 docs/doxygen/html/index.html
+```
+
+O PDF da documentação fica em:
+
+```text
+docs/doxygen/cadastro-clientes-doxygen.pdf
+```
+
+Para recriar o PDF a partir da saída LaTeX do Doxygen, é necessário ter uma
+distribuição LaTeX instalada.
+
+Windows:
+
+```powershell
+Set-Location docs\doxygen\latex
+.\make.bat
+Copy-Item refman.pdf ..\cadastro-clientes-doxygen.pdf -Force
+```
+
+Linux/macOS:
+
+```bash
+cd docs/doxygen/latex
+make
+cp refman.pdf ../cadastro-clientes-doxygen.pdf
 ```
 
 Para abrir pelo terminal:

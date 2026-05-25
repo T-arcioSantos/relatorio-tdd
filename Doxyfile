@@ -8,7 +8,7 @@ FILE_PATTERNS          = *.py
 EXTENSION_MAPPING      = py=Python
 
 GENERATE_HTML          = YES
-GENERATE_LATEX         = NO
+GENERATE_LATEX         = YES
 HTML_OUTPUT            = html
 
 EXTRACT_ALL            = YES
